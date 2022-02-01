@@ -19,5 +19,20 @@ function descuento(precio, descuento) {
     //calculando el precio real a pagar
     var precioReal = precio * factDesc;
 
-    return {factDesc , precioReal};
+    return precioReal;
+}
+
+//Interactuamos con el html
+function onclickPriceDescuento() {
+    const Precio = document.getElementById("InputPrice");
+    const price = Precio.value;
+
+    const Desc = document.getElementById("InputDescuento");
+    const desc = Desc.value;
+    
+    var Texto = document.getElementById("Result");
+
+    var Paga = descuento(price, desc);
+    
+    Texto.innerText = `El precio con descuento es ${Paga}Gs.`
 }
